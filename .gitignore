@@ -1,0 +1,14 @@
+out/
+__pycache__/
+*.egg-info/
+.pytest_cache/
+*.blend1
+# large binaries: regenerable or vendor sources (share via Drive / Git LFS)
+*.blend
+*.step
+*.STEP
+*.stp
+cad/mesh/PRINTER.stl
+cad/*.usdz
+cad/usd/TOTE.usdz
+desktop.ini

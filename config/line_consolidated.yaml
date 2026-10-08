@@ -1,0 +1,11 @@
+# What-if: fewest stations that still hold the 360 s takt.
+site: /World/Mesa/DroneLine
+area: GA
+pitch_m: 1.2
+skillets: 6
+stations:
+  - {asset_id: ST00, name: Load, elements: [[load_frame, 1]]}
+  - {asset_id: ST10, name: Motors_Controller, elements: [[place_motor, 4], [torque_m3, 16], [place_controller, 1], [torque_m3, 4]]}
+  - {asset_id: ST20, name: Camera_Antennas_Props_Marriage, elements: [[install_camera, 1], [install_antenna, 2], [place_prop, 4], [torque_m5_propnut, 4], [place_battery, 1], [strap_battery, 1]]}
+  - {asset_id: ST70, name: Final_Inspection, inspect: true, elements: [[bench_test, 1], [visual_check, 1]]}
+repair: {asset_id: RPR01, name: Repair_Bay, time: {dist: lognormal, mean: 300, sd: 60}}

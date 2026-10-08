@@ -1,0 +1,14 @@
+# Work elements in seconds. Manual work: lognormal with CV ~0.3-0.4 (real operator spread incl. fumbles);
+# scripted bench test: normal with CV ~0.15.
+load_frame: {dist: normal, mean: 25, sd: 0.5}   # KUKA1 robot cycle: fixed
+place_motor: {dist: lognormal, mean: 18, sd: 7}
+torque_m3: {dist: lognormal, mean: 7, sd: 2.5, torque: true}
+place_controller: {dist: lognormal, mean: 55, sd: 20}
+install_camera: {dist: lognormal, mean: 40, sd: 15}
+install_antenna: {dist: lognormal, mean: 20, sd: 8}
+place_prop: {dist: lognormal, mean: 6, sd: 2.5}
+torque_m5_propnut: {dist: lognormal, mean: 9, sd: 3.5, torque: true}
+place_battery: {dist: lognormal, mean: 15, sd: 6}
+strap_battery: {dist: lognormal, mean: 25, sd: 10}
+bench_test: {dist: normal, mean: 90, sd: 14}
+visual_check: {dist: lognormal, mean: 20, sd: 8}

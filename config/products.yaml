@@ -1,0 +1,9 @@
+# Models, colours (exclusive per model), battery options, props and part-number patterns.
+models:
+  A: {frame: MODEL_A, colours: [BLK, RED], batteries: [STD], print_min: 4.5}
+  B: {frame: MODEL_B, colours: [YEL, SLV], batteries: [STD, LR], print_min: 5.5}
+props: [TRI, BI]
+parts:
+  controller: "PN-ESC-FC-STACK-{colour}"
+  prop: {TRI: PN-PROP-5-TRI, BI: PN-PROP-5-BI}
+  battery: {STD: PN-BAT-6S, LR: PN-BAT-6S-LR}

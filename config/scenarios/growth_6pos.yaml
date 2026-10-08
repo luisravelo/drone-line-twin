@@ -1,0 +1,23 @@
+# Growth demand on the rebalanced 6-position line (minimum feasible for takt 146-175 s).
+name: growth_6pos
+seed: 42
+line: line_6pos.yaml
+takt_s: 160   # 180 drones per 8 h shift (22.5 JPH)
+index_s: 6
+warmup_min: 30   # fill all positions (<= 8 x 160 s) + first print/paint
+shift_min: 480
+shift_start_clock: "06:00"
+mix:
+  model: {A: 0.5, B: 0.5}
+  colour: {A: {BLK: 0.5, RED: 0.5}, B: {YEL: 0.5, SLV: 0.5}}
+  prop: {TRI: 0.6, BI: 0.4}
+  battery: {B: {STD: 0.7, LR: 0.3}}
+quality:
+  torque_nok_rate: 0.03
+  rehit: {dist: lognormal, mean: 25, sd: 15}
+  kitting_colour_error_rate: 0.01
+upstream: {printers: 2, paint_booths: 2, paint_min: 4}   # ~24 frames/h, 30/h paint
+# Pull: the customer order triggers the print; kanban cards = buffer slots (10). Paint and buffer are
+# constant-speed conveyors: booth 1.1 m in 240 s, buffer 3.0 m at 0.02 m/s, queue index 0.32 m = 16 s.
+pull: {wip_cap: 10, start_buffer: 4, transfer_s: 15, entry_spacing_s: 70, belt_to_booth_s: 65,
+       buffer_travel_s: 152, buffer_index_s: 16}

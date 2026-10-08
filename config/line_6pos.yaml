@@ -1,0 +1,16 @@
+# Growth demand (takt 160 s, 154 s available): 6 positions, balanced to <= ~85 % station load.
+# Precedence: camera mounts on the frame pivots (no dependency) so it moves to the load station;
+# its connector is plugged when the controller goes in. Antennas follow the controller (VTX on the stack).
+# Props stay late (damage risk), marriage last before inspection.
+site: /World/Mesa/DroneLine
+area: GA
+pitch_m: 1.2
+skillets: 8
+stations:
+  - {asset_id: ST00, name: Load_Camera, elements: [[load_frame, 1], [install_camera, 1]]}
+  - {asset_id: ST10, name: Motors_1_2, elements: [[place_motor, 2], [torque_m3, 8]]}
+  - {asset_id: ST20, name: Motors_3_4, elements: [[place_motor, 2], [torque_m3, 8]]}
+  - {asset_id: ST30, name: Controller_Antennas, elements: [[place_controller, 1], [torque_m3, 4], [install_antenna, 2]]}
+  - {asset_id: ST40, name: Props_Marriage, elements: [[place_prop, 4], [torque_m5_propnut, 4], [place_battery, 1], [strap_battery, 1]]}
+  - {asset_id: ST50, name: Final_Inspection, inspect: true, elements: [[bench_test, 1], [visual_check, 1]]}
+repair: {asset_id: RPR01, name: Repair_Bay, time: {dist: lognormal, mean: 300, sd: 60}}

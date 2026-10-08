@@ -1,0 +1,15 @@
+# GA paced skillet line, Z-up, stations along +X at pitch_m.
+site: /World/Mesa/DroneLine
+area: GA
+pitch_m: 1.2
+skillets: 10
+stations:
+  - {asset_id: ST00, name: Load, elements: [[load_frame, 1]]}
+  - {asset_id: ST10, name: Motors, elements: [[place_motor, 4], [torque_m3, 16]]}
+  - {asset_id: ST20, name: Controller, elements: [[place_controller, 1], [torque_m3, 4]]}
+  - {asset_id: ST30, name: Camera, elements: [[install_camera, 1]]}
+  - {asset_id: ST40, name: Antennas, elements: [[install_antenna, 2]]}
+  - {asset_id: ST50, name: Props, elements: [[place_prop, 4], [torque_m5_propnut, 4]]}
+  - {asset_id: ST60, name: Marriage, elements: [[place_battery, 1], [strap_battery, 1]]}
+  - {asset_id: ST70, name: Final_Inspection, inspect: true, elements: [[bench_test, 1], [visual_check, 1]]}
+repair: {asset_id: RPR01, name: Repair_Bay, time: {dist: lognormal, mean: 300, sd: 60}}
