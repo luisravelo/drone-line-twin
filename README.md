@@ -10,7 +10,8 @@ python run.py            # 4 scenarios x 20 simulated days, ~10 s -> out/
 python -m pytest -q      # 32 tests
 ```
 
-Open `out/line_viewer.html` (no server needed): **Live line** replays one day; **Report** compares scenarios.
+**Live viewer: https://luisravelo.github.io/drone-line-twin/** (same file as `docs/index.html`; regenerate locally as
+`out/line_viewer.html`). **Live line** replays one day; **Report** compares scenarios.
 
 ## What is modelled
 
